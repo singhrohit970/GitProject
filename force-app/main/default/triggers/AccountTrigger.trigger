@@ -6,6 +6,7 @@ trigger Account on Account (before update) {
                 if(acc.Phone!=Trigger.oldmap.get(acc.id).Phone){
                     
                     acc.Description='Phone is Updated! Old Value : ' +	Trigger.oldmap.get(acc.id).Phone+' New Value :'+acc.Phone;
+                    acc.addError('No');
                 }
                 
                 }
